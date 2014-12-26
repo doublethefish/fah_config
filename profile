@@ -1,5 +1,6 @@
 source ~/.fah/colours.sh
 source ~/.fah/compiler.sh
+source ~/.fah/git_utils.sh
 source ~/.fah/svn_utils.sh
 source ~/.fah/django.sh
 source ~/.fah/android.sh
@@ -57,11 +58,6 @@ PATH=${PATH}:/usr/local/mysql-5.5.2-m2-osx10.6-x86_64/bin/
 ####################################
 ###       ~Line Wrapping        ####
 ####################################
-
-alias gd="git difftool -y"
-alias dg="gd"
-
-source /usr/local/git/contrib/completion/git-completion.bash
 
 #include Foundry specific stuff
 source ~/bin/foundry_svn_user_frank/configs/bash/.foundry
