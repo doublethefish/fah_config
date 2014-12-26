@@ -1,4 +1,6 @@
 #!/bin/bash
+# Use diffmerge as the tool for svn-diff
+
 DIFFMERGE_PATH=/Applications/DiffMerge.app
 DIFFMERGE_EXEC=${DIFFMERGE_PATH}/Contents/MacOS/DiffMerge
 # svn will invoke this with a bunch of arguments.  These are:

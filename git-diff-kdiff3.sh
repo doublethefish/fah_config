@@ -1,6 +1,6 @@
 #!/bin/sh
 # Enables using kdiff3 as the diff-tool for git
-#/usr/bin/opendiff "$2" "$5"
+
 PWD=`pwd`
 FILE_2=${PWD}/${5}
 if [ ! -f ${FILE_2} ]

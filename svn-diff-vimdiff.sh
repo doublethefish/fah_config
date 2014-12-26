@@ -1,4 +1,6 @@
 #!/bin/sh
+# Enables using vimdiff as the svn-diff tool
+# Can be used as an svn-diff template
 
 # Configure your favorite diff program here.
 DIFF="/usr/bin/vimdiff"

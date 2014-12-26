@@ -1,5 +1,6 @@
 #!/bin/sh
-#/usr/bin/opendiff "$2" "$5"
+# Use diffmerge as the tool for git-diff
+
 PWD=`pwd`
 FILE_2=${PWD}/${5}
 if [ ! -f ${FILE_2} ]
