@@ -16,7 +16,6 @@ alias la="ls -GAlFhkO"
 alias gvim="mvim"
 alias ffind="find . -name "
 alias ffindi="find . -iname "
-alias mvcstatus="mvc status | grep ^[MCAD] | grep -v ^CVS "
 alias hgrep="ffind \"*.h\" | xargs grep -n"
 
 BROWSER=${BROWSER}:open
@@ -66,6 +65,4 @@ source /usr/local/git/contrib/completion/git-completion.bash
 
 #include Foundry specific stuff
 source ~/bin/foundry_svn_user_frank/configs/bash/.foundry
-
-export FN_FBUILD_USER=frank
 
