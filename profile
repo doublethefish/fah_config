@@ -1,5 +1,6 @@
 source ~/.fah/colours.sh
 source ~/.fah/compiler.sh
+source ~/.fah/svn_utils.sh
 
 ####################################
 ###    Environment Settings     ####
@@ -100,9 +101,6 @@ PATH=${PATH}:/usr/local/mysql-5.5.2-m2-osx10.6-x86_64/bin/
 ###       ~Line Wrapping        ####
 ####################################
 
-# svn diff
-alias kdiff3="/Developer/Applications/Utilities/kdiff3.app/Contents/MacOS/kdiff3"
-alias sd="svn diff --diff-cmd=/Users/frankharrison/bin/svn_diff_vim.sh"
 alias gd="git difftool -y"
 alias dg="gd"
 
