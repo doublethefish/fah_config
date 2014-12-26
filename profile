@@ -1,6 +1,7 @@
 source ~/.fah/colours.sh
 source ~/.fah/compiler.sh
 source ~/.fah/svn_utils.sh
+source ~/.fah/django.sh
 
 ####################################
 ###    Environment Settings     ####
@@ -50,22 +51,6 @@ PATH=${PATH}:/usr/local/mysql-5.5.2-m2-osx10.6-x86_64/bin/
 
 ####################################
 ###         ~Python 3.1         ####
-####################################
-
-
-####################################
-###            Django           ####
-####################################
-
-# I'm not using django for anything now - PATH=${PATH}:/Users/frankharrison/local/lib/python2.6/site-packages/django-trunk/django/bin
-#echo $PATH
-
-#----------------------------
-# Setting PYTHONPATH 
-# I'm not using django for anything now - PYTHONPATH=${PYTHONPATH}:/Users/frankharrison/local/lib/python2.6/site-packages:/Users/frankharrison/local/lib/python2.6/site-packages/django-trunk
-
-####################################
-###           ~Django           ####
 ####################################
 
 
