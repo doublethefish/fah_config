@@ -2,6 +2,7 @@ source ~/.fah/colours.sh
 source ~/.fah/compiler.sh
 source ~/.fah/svn_utils.sh
 source ~/.fah/django.sh
+source ~/.fah/android.sh
 
 ####################################
 ###    Environment Settings     ####
@@ -53,20 +54,6 @@ PATH=${PATH}:/usr/local/mysql-5.5.2-m2-osx10.6-x86_64/bin/
 ###         ~Python 3.1         ####
 ####################################
 
-
-####################################
-###           Android           ####
-####################################
-
-# I'm not doing any android dev right now - ANDROID=/Developer/SDKs/Android
-# I'm not doing any android dev right now - PATH=${ANDROID}/android-sdk-mac_x86/tools/:${ANDROID}/bin/:${PATH}
-# 
-# I'm not doing any android dev right now - #Cross Compiler setup
-# I'm not doing any android dev right now - CCOMPILER=${ANDROID}/src/system/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-
-
-####################################
-###          ~Android           ####
-####################################
 
 ####################################
 ###        Line wrapping        ####
