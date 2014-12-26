@@ -1,4 +1,5 @@
 #!/bin/bash
+# Enables using `bcompare` as the git-diff tool on supported platforms
 
 ##!/bin/sh
 ## diff is called by git with 7 parameters:
