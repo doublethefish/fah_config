@@ -1,4 +1,5 @@
 source ~/.fah/colours.sh
+source ~/.fah/aliases.sh
 source ~/.fah/compiler.sh
 source ~/.fah/git_utils.sh
 source ~/.fah/svn_utils.sh
@@ -12,12 +13,6 @@ source ~/.fah/python3.1.sh
 # should already be on the PATH - PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
 PATH=:~/bin:~/bin/deprocrastinator:${PATH} # my stuff
 echo "Using custom bash"
-alias ll="ls -GlFhkO"
-alias la="ls -GAlFhkO"
-alias gvim="mvim"
-alias ffind="find . -name "
-alias ffindi="find . -iname "
-alias hgrep="ffind \"*.h\" | xargs grep -n"
 
 BROWSER=${BROWSER}:open
 
