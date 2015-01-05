@@ -41,5 +41,5 @@ BROWSER=${BROWSER}:open
 ####################################
 
 #include Foundry specific stuff
-source ~/.fah/fah_bin/foundry_svn_user_frank/configs/bash/.foundry
+source ~/.fah/fn_frank_config/bash/foundry.sh
 
