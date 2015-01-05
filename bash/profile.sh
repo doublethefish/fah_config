@@ -1,17 +1,17 @@
-source ~/.fah/colours.sh
-source ~/.fah/aliases.sh
-source ~/.fah/compiler.sh
-source ~/.fah/git_utils.sh
-source ~/.fah/svn_utils.sh
-source ~/.fah/django.sh
-source ~/.fah/android.sh
-source ~/.fah/python3.1.sh
+source ~/.fah/bash/colours.sh
+source ~/.fah/bash/aliases.sh
+source ~/.fah/bash/compiler.sh
+source ~/.fah/bash/git_utils.sh
+source ~/.fah/bash/svn_utils.sh
+source ~/.fah/bash/django.sh
+source ~/.fah/bash/android.sh
+source ~/.fah/bash/python3.1.sh
 
 ####################################
 ###    Environment Settings     ####
 ####################################
 # should already be on the PATH - PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
-PATH=:~/bin:~/bin/deprocrastinator:${PATH} # my stuff
+PATH=:~/.fah/fah_bin:~/.fah/fah_bin/deprocrastinator:${PATH} # my stuff
 echo "Using custom bash"
 
 BROWSER=${BROWSER}:open
@@ -55,5 +55,5 @@ PATH=${PATH}:/usr/local/mysql-5.5.2-m2-osx10.6-x86_64/bin/
 ####################################
 
 #include Foundry specific stuff
-source ~/bin/foundry_svn_user_frank/configs/bash/.foundry
+source ~/.fah/fah_bin/foundry_svn_user_frank/configs/bash/.foundry
 
