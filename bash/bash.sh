@@ -1,3 +1,5 @@
+source ~/.fah/bash/os.sh             # setup Platform detection
+source ~/.fah/bash/fah_bin_setup.sh  # setup bin-path
 source ~/.fah/bash/colours.sh
 source ~/.fah/bash/aliases.sh
 source ~/.fah/bash/compiler.sh
@@ -11,7 +13,7 @@ source ~/.fah/bash/python3.1.sh
 ###    Environment Settings     ####
 ####################################
 # should already be on the PATH - PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
-PATH=:~/.fah/fah_bin:~/.fah/fah_bin/deprocrastinator:${PATH} # my stuff
+PATH=:${FAH_BIN}:$FAH_BIN}/deprocrastinator:${PATH} # my stuff
 echo "Using custom bash"
 
 BROWSER=${BROWSER}:open
