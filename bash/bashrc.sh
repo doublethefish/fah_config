@@ -76,25 +76,25 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ll="ls -GlFhkX --color=always"
-    alias la="ll -A" 
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+fi
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+
+# some more ls aliases
+if [[ ${unamestr} == "Darwin" ]]; then
+  alias ll="ls -GlFhk"
+  alias la='ll -A'
+  alias l='ls -CF'
 else
-  # some more ls aliases
-  if [[ ${unamestr} == "Darwin" ]]; then
-    alias ll="ls -GlFhk"
-    alias la='ls -A'
-    alias l='ls -CF'
-  else
-    alias ll='ls -alF'
-    alias la='ls -A'
-    alias l='ls -CF'
-  fi
+  #alias ll='ls -alF'
+  alias ll="ls -GlFhkX --color=always"
+  alias la="ll -A" 
+  alias l='ls -CF'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
+
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 if [[ ${unamestr} == "MINGW32_NT-6.1" ]]; then
