@@ -1,2 +1,5 @@
-eval FAH_BIN=~/.fah/fah_bin
+if [ -z ${FAH_HOME} ]; then
+  eval FAH_HOME=~
+fi
+eval FAH_BIN=${FAH_HOME}/.fah/fah_bin
 export FAH_BIN
