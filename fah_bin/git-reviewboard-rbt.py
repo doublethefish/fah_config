@@ -93,10 +93,10 @@ args = parser.parse_known_args()
 if not args[0].all and len(args[0].hash) == 0:
     # no hash and not processing all commits
     die('Error: Must specify --hash or --all')
-    
+
 if args[0].all:
     # Get the various bits of GIT information we need
-    #    
+    #
     upstream_branch = 'remotes/git-svn' #execute(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip()
     #print upstream_branch
     head_ref = execute(['git', 'symbolic-ref', '-q', 'HEAD']).strip()
@@ -113,7 +113,7 @@ if args[0].all:
     print 'Submitting reviews for all commits since merge-base with ' + upstream_branch + '(' + merge_base + ')'
     if len(args[0].hash) != 0:
         print 'Ignoring hash ' + args[0].hash + ' specified on command line'
-    
+
     # loop over pairs of hashes and submit the diffs from them
     for i in range( len(hashes_to_diff) - 1):
         print 'Review of', hashes_to_diff[i], 'to', hashes_to_diff[(i+1)]
@@ -127,7 +127,7 @@ else:
     hash = args[0].hash
 
     # Get the various bits of GIT information we need
-    #    
+    #
     # get the commit hashes for the two previous commits
     commit_hashes = execute(['git', 'log', '--pretty=format:%H', '--reverse', '-2', hash]).strip()
     #print commit_hashes
