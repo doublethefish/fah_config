@@ -45,3 +45,17 @@ BROWSER=${BROWSER}:open
 #include Foundry specific stuff
 source ~/.fah/fn_frank_config/bash/foundry.sh
 
+####################################
+###       Filter PATH           ####
+####################################
+splitPath=`echo ${PATH} | sed 's/:/ /g'`;
+PATH=
+for pathBit in ${splitPath}; do
+  if [[ -e ${pathBit} ]]; then
+    PATH=${PATH}:${pathBit}
+  fi
+done
+####################################
+###      ~Filter PATH           ####
+####################################
+
