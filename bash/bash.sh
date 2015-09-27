@@ -12,7 +12,7 @@ source ~/.fah/bash/python3.1.sh
 ####################################
 ###    Environment Settings     ####
 ####################################
-# should already be on the PATH - PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
+PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
 PATH=:${FAH_BIN}:$FAH_BIN}/deprocrastinator:${PATH} # my stuff
 echo "Using custom bash"
 
