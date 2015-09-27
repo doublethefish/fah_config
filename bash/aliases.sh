@@ -12,3 +12,12 @@ alias fn="dev && cd Foundry"
 if [[ "$FAH_PLATFORM" == 'mac' ]]; then
   alias gvim="mvim"
 fi
+
+
+function vffind {
+  gvim `ffind $@`
+}
+
+function vffindi {
+  gvim `ffindi $@`
+}
