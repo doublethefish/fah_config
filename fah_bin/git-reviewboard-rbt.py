@@ -147,7 +147,8 @@ else:
     #print branch
 
     print 'Review of', hashes_to_diff[0], 'to', hashes_to_diff[1]
-    review = execute( ['rbt', 'post', 
-                      hashes_to_diff[1] ] + args[1] )
+    cmd = ['rbt', 'post', '-I', hashes_to_diff[1], '--parent=%s'%hashes_to_diff[0] ] + args[1]
+    print " ".join( cmd )
+    review = execute( cmd )
     print review
-    
+
