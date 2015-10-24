@@ -12,6 +12,7 @@ source ${FAH_HOME}/.fah/bash/svn_utils.sh
 source ${FAH_HOME}/.fah/bash/django.sh
 source ${FAH_HOME}/.fah/bash/android.sh
 source ${FAH_HOME}/.fah/bash/python3.1.sh
+source ${FAH_HOME}/.fah/bash/ssh.sh
 
 ####################################
 ###    Environment Settings     ####
