@@ -1,3 +1,4 @@
+# hmm does work at all times...
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
