@@ -7,6 +7,9 @@ alias hgrep="ffind \"*.h\" | xargs grep -n"
 alias dev="cd ~/Development"
 alias fah="dev && cd fah_products"
 alias fn="dev && cd Foundry"
+alias dtf="dev && cd doublethefish"
+alias double="dtf"
+alias doublethefish="dtf"
 
 # Mac OS specific aliases
 if [[ "$FAH_PLATFORM" == 'mac' ]]; then
