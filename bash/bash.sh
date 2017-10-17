@@ -54,7 +54,7 @@ BROWSER=${BROWSER}:open
 ####################################
 
 #include Foundry specific stuff
-source ${FAH_HOME}/.fah/fn_frank_config/bash/foundry.sh
+#I no longer work at the foundry: source ${FAH_HOME}/.fah/fn_frank_config/bash/foundry.sh
 
 
 ####################################
