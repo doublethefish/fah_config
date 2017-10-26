@@ -21,11 +21,15 @@ if [ -z ${FAH_BIN} ]; then
   echo "FAH_BIN not set!!"
 else
   PATH=${PATH}:${FAH_BIN} # my stuff
+  PATH=${PATH}:${FAH_BIN}/git # my git tools
+  PATH=${PATH}:${FAH_BIN}/git/git-code-quality # my git specific code quality tools
+  PATH=${PATH}:${FAH_BIN}/git/git-code-review # tools for uploading to code-review systems
+  PATH=${PATH}:${FAH_BIN}/git/git-difftools # git diff utils
+  PATH=${PATH}:${FAH_BIN}/svn # my svn tools
   echo "Using .fah bash ${FAH_BIN}"
 fi
 
 PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
-PATH=:${FAH_BIN}:$FAH_BIN}/deprocrastinator:${PATH} # my stuff
 
 BROWSER=${BROWSER}:open
 
