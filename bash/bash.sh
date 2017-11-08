@@ -13,6 +13,7 @@ source ${FAH_HOME}/.fah/bash/django.sh
 source ${FAH_HOME}/.fah/bash/android.sh
 source ${FAH_HOME}/.fah/bash/python3.1.sh
 source ${FAH_HOME}/.fah/bash/ssh.sh
+source ${FAH_HOME}/.fah/bash/autocomplete.sh
 
 ####################################
 ###    Environment Settings     ####

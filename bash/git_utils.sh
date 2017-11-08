@@ -39,21 +39,18 @@ GIT_PROMPT_THEME=Default
 
 if [ ! -z  ${GIT_PROMPT} ]; then
   source ${GIT_PROMPT}
-else
-  if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-    GIT_PROMPT_THEME=Default
-    source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
-  else
-    echo "Git-prompt script not found: ${GIT_PROMPT_FILES}"
-  fi
+elif [[ "${FAH_PLATFORM}" == 'mac' ]]; then
+	# use Brew to look for git stuffs on mac
+	if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
+		GIT_PROMPT_THEME=Default
+		source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+	else
+		echo "Git-prompt script not found: ${GIT_PROMPT_FILES}"
+	fi
 fi
 
 if [ ! -z  ${GIT_COMPLETE} ]; then
   source ${GIT_COMPLETE}
 else
-  if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-    echo ""
-  else
-    echo "Git-complete script not found: ${GIT_COMPLETION_FILES}"
-  fi
+	echo "Git-complete script not found: ${GIT_COMPLETION_FILES}"
 fi
