@@ -58,10 +58,6 @@ BROWSER=${BROWSER}:open
 ###       ~Line Wrapping        ####
 ####################################
 
-#include Foundry specific stuff
-#I no longer work at the foundry: source ${FAH_HOME}/.fah/fn_frank_config/bash/foundry.sh
-
-
 ####################################
 ###       Filter PATH           ####
 ####################################

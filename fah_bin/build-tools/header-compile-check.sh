@@ -2,7 +2,7 @@
 
 # Currently tries to build a noddy-cpp file which includes all headers matching
 # the linux path 'include/fah/*.h`.
-# This script *has* been proted to SCons for use by The Foundry by me. This is
+# This script *has* been ported to SCons for use by The Foundry by me. This is
 # where it was first done.
 
 #---------------------------------------------------------------
