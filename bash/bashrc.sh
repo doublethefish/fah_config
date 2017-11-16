@@ -62,18 +62,6 @@ fi
 #    ;;
 #esac
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-for filename in /etc/bash_completion /etc/bash_completion.d/git /etc/bash_completion.d/subversion /etc/bash_completion.d/yum.bash
-do
-  if [ -f $filename ] && ! shopt -oq posix; then
-    . $filename
-  fi
-done
-
-
-
 PATH=$PATH:/workspace/FnSCons/2.1.0/bin:/workspace/FnSCons/2.1.0/lib:/workspace/FnSCons/lib/scons-2.1.0/SCons/
 PATH=$PATH:/opt/qtcreator-2.3.1/bin/
 PATH=$PATH:/usr/local/smartgithg-5_0_3/bin/
