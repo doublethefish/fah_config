@@ -12,3 +12,7 @@ elif [[ "$unamestr" == 'MINGW32_NT-6.1' ]]; then
 fi
 export FAH_PLATFORM
 echo "Setting FAH_PLATFORM to ${FAH_PLATFORM} from ${unamestr}"
+
+if [ -z ${FAH_DEV_DIR} ]; then
+  echo "WARNING! : You have not set the 'FAH_DEV_DIR' env variable on this machine, yet."
+fi
