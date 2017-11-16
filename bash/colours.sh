@@ -121,7 +121,11 @@ fi
 SHORT_HOST_NAME=`echo ${HOSTNAME} | sed 's/\..*//'` # strip off everything after the first dot
 SHORT_HOST_NAME=`echo ${SHORT_HOST_NAME} | sed 's/\(.\).*\(.\)$/\1\2/'` # strip off everything after the first dot
 SHORT_HOST_NAME=`echo ${SHORT_HOST_NAME} | tr '[:upper:]' '[:lower:]'` # make lower case
-PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}$\w${PS1_TXTBrown}\$ ${PS1_TXTGreen}${PS1_TXTGrey}" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+#export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\w${PS1_TXTBrown}\$(parse_git_branch)\\\$ ${PS1_TXTGreen}${PS1_TXTGrey}" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
 #PS1="\[${TXTBoldWhite}]]${SHORT_HOST_NAME}\{${TXTCyan}]]\w\[${TXTBrown}]]\$ \[${TXTGrey}]]" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
 export PS1
 
