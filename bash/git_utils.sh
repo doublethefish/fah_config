@@ -12,6 +12,13 @@ alias dg="gd"
 GIT_SEARCH_DIRS="/usr/local/git/contrib/completion"
 
 if [[ "${FAH_PLATFORM}" == "mac" ]]; then
+  for pkg in bash-completion bash-git-prompt; do
+    if ! brew list -1 | grep -q "^${pkg}\$"; then
+      echo "The package ${pkg} is not installed, installing"
+      brew install bash-completion
+    fi
+  done
+
   BREW_GIT_DIR=$(brew --prefix bash-git-prompt)/share
 
   __GIT_PROMPT_DIR=${BREW_GIT_DIR}
