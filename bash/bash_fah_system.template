@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Dev dir
+FAH_DEV_DIR="FAH_DEV_DIR: <- NEEDS UPDATE (~/.bash_fah_system)" # /Users/frank/Development
+export FAH_DEV_DIR
+
+# SSH keys we need to load on this system dir
+FAH_SSH_KEYS="FAH_SSH_KEYS__NEEDS_UPDATE_bash_fah_system" # "~/.ssh/id_rsa_doublethefish ~/.ssh/id_rsa_frank ~/.ssh/id_rsa_gitlab"
+export FAH_SSH_KEYS
