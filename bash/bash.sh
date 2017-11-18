@@ -1,7 +1,9 @@
 if [ -z ${FAH_HOME} ]; then
   eval FAH_HOME=~
+  export FAH_HOME
   echo $FAH_HOME
 fi
+
 source ${FAH_HOME}/.fah/bash/os.sh             # setup Platform detection
 source ${FAH_HOME}/.fah/bash/fah_bin_setup.sh  # setup bin-path
 source ${FAH_HOME}/.fah/bash/aliases.sh
