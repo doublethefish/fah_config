@@ -1,3 +1,5 @@
+GIT_PROMPT_THEME=Default
+export GIT_PROMPT_THEME
 
 if [ -z $FAH_BIN ]; then
   echo "WARNING: FAH_BIN hasn't been set!"
@@ -11,6 +13,10 @@ GIT_SEARCH_DIRS="/usr/local/git/contrib/completion"
 
 if [[ "${FAH_PLATFORM}" == "mac" ]]; then
   BREW_GIT_DIR=$(brew --prefix bash-git-prompt)/share
+
+  __GIT_PROMPT_DIR=${BREW_GIT_DIR}
+  export __GIT_PROMPT_DIR
+
   GIT_SEARCH_DIRS="$GIT_SEARCH_DIRS ${BREW_GIT_DIR}"
 fi
 
