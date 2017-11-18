@@ -4,7 +4,6 @@ if [ -z ${FAH_HOME} ]; then
 fi
 source ${FAH_HOME}/.fah/bash/os.sh             # setup Platform detection
 source ${FAH_HOME}/.fah/bash/fah_bin_setup.sh  # setup bin-path
-source ${FAH_HOME}/.fah/bash/colours.sh
 source ${FAH_HOME}/.fah/bash/aliases.sh
 source ${FAH_HOME}/.fah/bash/compiler.sh
 source ${FAH_HOME}/.fah/bash/git_utils.sh
@@ -14,6 +13,7 @@ source ${FAH_HOME}/.fah/bash/android.sh
 source ${FAH_HOME}/.fah/bash/python3.1.sh
 source ${FAH_HOME}/.fah/bash/ssh.sh
 source ${FAH_HOME}/.fah/bash/autocomplete.sh
+source ${FAH_HOME}/.fah/bash/colours.sh # last to override git stuff etc.
 
 ####################################
 ###    Environment Settings     ####
