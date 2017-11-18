@@ -1,0 +1,29 @@
+#! /bin/sh
+
+# Really simple script to run pylint (which has to be on the path) on all
+# python file contained in this dir and all sub-dirs
+
+# find each python file from here
+PREFIX=""
+if [[ $# -gt 0 ]]; then
+	PREFIX="${1}"
+fi
+FILES=`find . -name "${PREFIX}*.py" | grep -v "SCons"`
+
+CONFIG=""
+if [ -e "pylint.rc" ]; then
+	CONFIG="--rcfile=pylint.rc "
+fi
+
+for file in ${FILES}
+do
+	ERRS=`pylint -E ${file} ${CONFIG} 2>&1 | grep "^E:"`
+	if [ -n "${ERRS}" ]; then
+		ERRS2=`echo "${ERRS}" | sed 's/^/          /'`
+		NUM_ERRS=`echo "${ERRS}" | wc -l`
+		if [[ $NUM_ERRS -ne 0 ]]; then
+			echo "$NUM_ERRS,$file"
+			echo "${ERRS2}"
+		fi
+	fi
+done
