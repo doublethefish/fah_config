@@ -25,6 +25,10 @@ if [[ "${FAH_PLATFORM}" == "mac" ]]; then
   export __GIT_PROMPT_DIR
 
   GIT_SEARCH_DIRS="$GIT_SEARCH_DIRS ${BREW_GIT_DIR}"
+
+  # Hardcode the search for the bash-completion. There might be a better way to
+  # do this
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 fi
 
 GIT_COMPLETION_FILES="git-completion.bash"
