@@ -24,7 +24,8 @@ if [[ "${FAH_PLATFORM}" == "mac" ]]; then
   __GIT_PROMPT_DIR=${BREW_GIT_DIR}
   export __GIT_PROMPT_DIR
 
-  GIT_SEARCH_DIRS="$GIT_SEARCH_DIRS ${BREW_GIT_DIR}"
+  # disable on mac until I can work out why my custom PS1 is being overwritten
+  GIT_SEARCH_DIRS="" #$GIT_SEARCH_DIRS ${BREW_GIT_DIR}"
 
   # Hardcode the search for the bash-completion. There might be a better way to
   # do this
