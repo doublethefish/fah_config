@@ -50,8 +50,9 @@ for GIT_DIR in ${GIT_SEARCH_DIRS}; do
   fi
 done;
 
-if [[ ! -z ${GIT_PROMPT} ]] || [[ -f  ${GIT_PROMPT} ]]; then
+if [[ ! -z ${GIT_PROMPT} ]] && [[ -f  ${GIT_PROMPT} ]]; then
   source ${GIT_PROMPT}
+  echo ${GIT_PROMPT}
 else
   echo "Git-prompt script not found: ${GIT_COMPLETION_FILES}"
 fi
