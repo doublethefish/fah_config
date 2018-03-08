@@ -26,7 +26,10 @@ fi
 
 
 # Currently these are mac-specific
-if [ "$color_prompt" = yes ]; then
+if [ "$color_prompt" != yes ]; then
+  echo "FIXME: Colour support not detected."
+  echo "\t: This is possibly a lie; is tput missing?"
+else
   TXTNoColour="\033[0m"
   TXTBlack="\033[0;30m"
   TXTRed="\033[0;31m"
@@ -66,47 +69,6 @@ if [ "$color_prompt" = yes ]; then
   PS1_TXTBoldPurple="\[${TXTBoldPurple}\]"
   PS1_TXTBoldCyan="\[${TXTBoldCyan}\]"
   PS1_TXTBoldWhite="\[${TXTBoldWhite}\]"
-else
-  echo "FIXME: Colour support not detected, I suspect it's a lie, is tput missing (e.g. it is in git-bash"
-  # copies of the above for when colours aren't supported
-  TXTNoColour=""
-  TXTBlack=""
-  TXTRed=""
-  TXTGreen=""
-  TXTBrown=""
-  TXTBlue=""
-  TXTPurple=""
-  TXTCyan=""
-  TXTGrey=""
-  TXTUnknown1=""
-  TXTUnknown2=""
-  TXTDarkGray=""
-  TXTBoldRed=""
-  TXTBoldGreen=""
-  TXTBoldYellow=""
-  TXTBoldBlue=""
-  TXTBoldPurple=""
-  TXTBoldCyan=""
-  TXTBoldWhite=""
-  PS1_TXTNoColour=""
-  PS1_TXTBlack=""
-  PS1_TXTRed=""
-  PS1_TXTGreen=""
-  PS1_TXTBrown=""
-  PS1_TXTBlue=""
-  PS1_TXTPurple=""
-  PS1_TXTCyan=""
-  PS1_TXTGrey=""
-  PS1_TXTUnknown1=""
-  PS1_TXTUnknown2=""
-  PS1_TXTDarkGray=""
-  PS1_TXTBoldRed=""
-  PS1_TXTBoldGreen=""
-  PS1_TXTBoldYellow=""
-  PS1_TXTBoldBlue=""
-  PS1_TXTBoldPurple=""
-  PS1_TXTBoldCyan=""
-  PS1_TXTBoldWhite=""
 fi
 
 ##Reset="\[$(tput sgr0)\]"
