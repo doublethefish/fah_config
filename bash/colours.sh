@@ -18,10 +18,20 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
   # a case would tend to support setf rather than setaf.)
   color_prompt=yes
-else
-  echo "FIXME: Colour support not detected, I suspect it's a lie, is tput missing (e.g. it is in git-bash"
-  # TODO: redo this when tput or alternative is found: color_prompt=
-  color_prompt=yes
+fi
+
+# fall-back
+if [ "$color_prompt" != yes ]; then
+  # check if stdout is a terminal...
+  if test -t 1; then
+
+    # see if it supports colors...
+    ncolors=$(tput colors)
+
+    if test -n "$ncolors" && test $ncolors -ge 8; then
+      color_prompt=yes
+    fi
+  fi
 fi
 
 
