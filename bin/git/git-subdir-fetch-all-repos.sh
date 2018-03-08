@@ -1,3 +1,4 @@
+source ~/.fah/bash/colours.sh
 CUR=`echo $PWD`
 for dir in `find ${CUR} -name ".git" -type d`
 do
@@ -6,5 +7,11 @@ do
   FULLDIR=${DIR}
   cd $FULLDIR
   pwd
-  git fetch --all --prune | sed -E 's#^# ['${FULLDIR}'] #g'
+
+  OUTPUT=$( git fetch --all --prune )
+  IFS=$'\n'
+  read -r -a array <<< "${OUTPUT}"
+  for i in "${array[@]}"; do
+      echo -e "${TXTNoColour} [${TXTYellow}${FULLDIR}${TXTNoColour}] $i"
+  done
 done
