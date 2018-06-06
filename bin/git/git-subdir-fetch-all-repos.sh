@@ -1,12 +1,12 @@
 source ~/.fah/bash/colours.sh
 CUR=`echo $PWD`
-for dir in `find ${CUR} -name ".git" -type d`
+for dir in `find ${CUR} -name ".git"`
 do
   DIR=`dirname $dir`
   FULLDIR=$CUR/${DIR}
   FULLDIR=${DIR}
   cd $FULLDIR
-  pwd
+  echo -e "${TXTBoldCyan}${FULLDIR}${TXTNoColour}"
 
   OUTPUT=$( git fetch --all --prune )
   IFS=$'\n'
