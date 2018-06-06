@@ -8,7 +8,7 @@ do
   cd $FULLDIR
   echo -e "${TXTBoldCyan}${FULLDIR}${TXTNoColour}"
 
-  OUTPUT=$( git lfs pull )
+  OUTPUT=$( git fetch --all --prune; git lfs pull )
   IFS=$'\n'
   read -r -a array <<< "${OUTPUT}"
   for i in "${array[@]}"; do
