@@ -16,6 +16,7 @@ alias fah="dev && cd fah_products"
 alias dtf="dev && cd doublethefish"
 alias double="dtf"
 alias doublethefish="dtf"
+export dev
 
 
 function vffind {
