@@ -12,6 +12,10 @@ do
   IFS=$'\n'
   read -r -a array <<< "${OUTPUT}"
   for i in "${array[@]}"; do
-      echo -e "${TXTNoColour} [${TXTYellow}${FULLDIR}${TXTNoColour}] $i"
+      IFS=$'\r'
+      read -r -a array_cr <<< "${OUTPUT}"
+      for j in "${array_cr[@]}"; do
+        echo -e "${TXTNoColour} [${TXTYellow}${FULLDIR}${TXTNoColour}] $j"
+      done
   done
 done
