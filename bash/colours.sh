@@ -97,6 +97,9 @@ SHORT_HOST_NAME=`echo ${SHORT_HOST_NAME} | tr '[:upper:]' '[:lower:]'` # make lo
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
+parse_path() {
+    pwd | sed -e 's#\$NC_LIBRARIES_META_PATH#nclibs#' | sed -e 's#/mnt/d/NCam/#NC|#' | sed -e 's#/mnt/d/NCam/#NC|#'
+}
 fah_prompt_cmd() {
   NCAM_PATH=`pwd | sed -e 's#.*NCam.*/\(Nc[^/]*\).*#\1#' | sed -e 's#.*NCam#NCam#' | sed -e 's#.*Development/*#dev:#g'`
   echo -en "\033]0;${NCAM_PATH}\a"
@@ -105,7 +108,7 @@ export fah_prompt_cmd
 PROMPT_COMMAND=fah_prompt_cmd
 export PROMPT_COMMAND
 #export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\w${PS1_TXTBrown}\$(parse_git_branch)\\\$ ${PS1_TXTGreen}${PS1_TXTGrey}" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
+PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTBrown}\$(parse_git_branch)\\\$ ${PS1_TXTGreen}${PS1_TXTGrey}" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
 #PS1="\[${TXTBoldWhite}]]${SHORT_HOST_NAME}\{${TXTCyan}]]\w\[${TXTBrown}]]\$ \[${TXTGrey}]]" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
 export PS1
 
