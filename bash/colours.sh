@@ -101,7 +101,7 @@ parse_path() {
     pwd | sed -e 's#\$NC_LIBRARIES_META_PATH#nclibs#' | sed -e 's#/mnt/d/NCam/#NC|#' | sed -e 's#/mnt/d/NCam/#NC|#'
 }
 fah_prompt_cmd() {
-  NCAM_PATH=`pwd | sed -e 's#.*NCam.*/\(Nc[^/]*\).*#\1#' | sed -e 's#.*NCam#NCam#' | sed -e 's#.*Development/*#dev:#g'`
+  NCAM_PATH=`pwd | sed -e 's#.*NCam.*/\(\(RTC\|Nc\)[^/]*\).*#\1#' | sed -e 's#.*NCam#NCam#' | sed -e 's#.*Development/*#dev:#g'`
   echo -en "\033]0;${NCAM_PATH}\a"
 }
 export fah_prompt_cmd
