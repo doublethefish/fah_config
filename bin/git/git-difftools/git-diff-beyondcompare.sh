@@ -13,4 +13,3 @@ bcompare "$2" "$5" -title1="$2 (Prev)" -title2="$5 (Working)" | cat
 #echo "6 = $6"
 #echo -e "7 = $7\n\n"
 exit 0
-

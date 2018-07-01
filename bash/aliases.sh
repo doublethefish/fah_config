@@ -1,8 +1,8 @@
 OS_SPECIFIC_LS_OPTION=""
 # Mac OS specific aliases
 if [[ "$FAH_PLATFORM" == 'mac' ]]; then
-  alias gvim="mvim"
-  OS_SPECIFIC_LS_OPTION="O"
+	alias gvim="mvim"
+	OS_SPECIFIC_LS_OPTION="O"
 fi
 
 # A place to store useful aliases
@@ -18,11 +18,10 @@ alias double="dtf"
 alias doublethefish="dtf"
 export dev
 
-
-function vffind {
-  gvim `ffind $@`
+function vffind() {
+	gvim $(ffind $@)
 }
 
-function vffindi {
-  gvim `ffindi $@`
+function vffindi() {
+	gvim $(ffindi $@)
 }

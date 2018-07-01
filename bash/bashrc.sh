@@ -8,13 +8,13 @@
 [ -z "$PS1" ] && return
 
 if [ -z ${FAH_HOME} ]; then
-  eval FAH_HOME=~
-  echo $FAH_HOME
+	eval FAH_HOME=~
+	echo $FAH_HOME
 fi
 source ${FAH_HOME}/.fah/bash/bash.sh # shared bashrc-like config
 
-unamestr=`uname`
-echo "bash is on ${unamestr}" 
+unamestr=$(uname)
+echo "bash is on ${unamestr}"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -36,9 +36,8 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+	debian_chroot=$(cat /etc/debian_chroot)
 fi
-
 
 # TODO: this is being done in my colour.sh
 # PROMPT_COMMAND is executed just before displaying $PS1
@@ -68,6 +67,4 @@ PATH=$PATH:/usr/local/smartgithg-5_0_3/bin/
 PATH=$PATH:${FAH_HOME}/bin/user_frank_svn/
 PYTHON_PATH=$PYTHON_PATH:/workspace/FnSCons/2.1.0/engine
 
-
 hostname
-

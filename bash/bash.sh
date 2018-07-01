@@ -1,11 +1,11 @@
 if [ -z ${FAH_HOME} ]; then
-  eval FAH_HOME=~
-  export FAH_HOME
-  echo $FAH_HOME
+	eval FAH_HOME=~
+	export FAH_HOME
+	echo $FAH_HOME
 fi
 
-source ${FAH_HOME}/.fah/bash/os.sh             # setup Platform detection
-source ${FAH_HOME}/.fah/bash/fah_bin_setup.sh  # setup bin-path
+source ${FAH_HOME}/.fah/bash/os.sh            # setup Platform detection
+source ${FAH_HOME}/.fah/bash/fah_bin_setup.sh # setup bin-path
 source ${FAH_HOME}/.fah/bash/aliases.sh
 source ${FAH_HOME}/.fah/bash/compiler.sh
 source ${FAH_HOME}/.fah/bash/git_utils.sh
@@ -21,15 +21,15 @@ source ${FAH_HOME}/.fah/bash/colours.sh # last to override git stuff etc.
 ###    Environment Settings     ####
 ####################################
 if [ -z ${FAH_BIN} ]; then
-  echo "FAH_BIN not set!!"
+	echo "FAH_BIN not set!!"
 else
-  PATH=${PATH}:${FAH_BIN} # my stuff
-  PATH=${PATH}:${FAH_BIN}/git # my git tools
-  PATH=${PATH}:${FAH_BIN}/git/git-code-quality # my git specific code quality tools
-  PATH=${PATH}:${FAH_BIN}/git/git-code-review # tools for uploading to code-review systems
-  PATH=${PATH}:${FAH_BIN}/git/git-difftools # git diff utils
-  PATH=${PATH}:${FAH_BIN}/svn # my svn tools
-  echo "Using .fah bash ${FAH_BIN}"
+	PATH=${PATH}:${FAH_BIN}                      # my stuff
+	PATH=${PATH}:${FAH_BIN}/git                  # my git tools
+	PATH=${PATH}:${FAH_BIN}/git/git-code-quality # my git specific code quality tools
+	PATH=${PATH}:${FAH_BIN}/git/git-code-review  # tools for uploading to code-review systems
+	PATH=${PATH}:${FAH_BIN}/git/git-difftools    # git diff utils
+	PATH=${PATH}:${FAH_BIN}/svn                  # my svn tools
+	echo "Using .fah bash ${FAH_BIN}"
 fi
 
 PATH=/usr/local/bin:${PATH} # custom installs, also where brew (from homebrew) puts its stuff)
@@ -63,14 +63,13 @@ BROWSER=${BROWSER}:open
 ####################################
 ###       Filter PATH           ####
 ####################################
-splitPath=`echo ${PATH} | sed 's/:/ /g'`;
+splitPath=$(echo ${PATH} | sed 's/:/ /g')
 PATH=
 for pathBit in ${splitPath}; do
-  if [[ -e ${pathBit} ]]; then
-    PATH=${PATH}:${pathBit}
-  fi
+	if [[ -e ${pathBit} ]]; then
+		PATH=${PATH}:${pathBit}
+	fi
 done
 ####################################
 ###      ~Filter PATH           ####
 ####################################
-

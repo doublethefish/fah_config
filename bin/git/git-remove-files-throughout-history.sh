@@ -7,9 +7,9 @@ if [ -z $1 ]; then
 fi
 
 # get all of the largest files in the repo
-LARGEST_FILES=$( git-largest-files.sh )
-LARGE_FILES_MATCHING_PARAMS=$( echo "$LARGEST_FILES" | sed 's/ /\n/g' | ag $1 )
-COUNT_OF_INPUT=$( echo "$LARGE_FILES_MATCHING_PARAMS" | wc -l )
+LARGEST_FILES=$(git-largest-files.sh)
+LARGE_FILES_MATCHING_PARAMS=$(echo "$LARGEST_FILES" | sed 's/ /\n/g' | ag $1)
+COUNT_OF_INPUT=$(echo "$LARGE_FILES_MATCHING_PARAMS" | wc -l)
 
 echo "$1 matches $COUNT_OF_INPUT files"
 

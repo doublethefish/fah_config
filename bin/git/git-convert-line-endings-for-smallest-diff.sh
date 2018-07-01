@@ -1,5 +1,5 @@
 #FILES=$( find . -iname "*.ini" -o -iname "*.h" -o -iname "*.cpp" ) #
-FILES=$( git status -uno | ag "modified" | sed 's/modified://' )
+FILES=$(git status -uno | ag "modified" | sed 's/modified://')
 for file in ${FILES}; do
 	dos2unix $file
 	DIFF_COUNT_UNIX=$(git diff ${file} | wc -l)

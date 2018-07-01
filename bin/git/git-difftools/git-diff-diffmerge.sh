@@ -1,10 +1,9 @@
 #!/bin/sh
 # Use diffmerge as the tool for git-diff
 
-PWD=`pwd`
+PWD=$(pwd)
 FILE_2=${PWD}/${5}
-if [ ! -f ${FILE_2} ]
-then
+if [ ! -f ${FILE_2} ]; then
 	FILE_2="${5}"
 fi
 
