@@ -64,7 +64,7 @@ else
 	export PS1_TXTBlack="\[${TXTBlack}\]"
 	export PS1_TXTRed="\[${TXTRed}\]"
 	export PS1_TXTGreen="\[${TXTGreen}\]"
-	export PS1_TXTBrown="\[${TXTYellow}\]"
+	export PS1_TXTBrown="\[${TXTBrown}\]"
 	export PS1_TXTBlue="\[${TXTBlue}\]"
 	export PS1_TXTPurple="\[${TXTPurple}\]"
 	export PS1_TXTCyan="\[${TXTCyan}\]"
