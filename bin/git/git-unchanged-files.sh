@@ -1,0 +1,9 @@
+git ls-files | while read -r line;
+do
+    st=$(git status -s "$line");
+    if [ -n "$st" ]; then
+        echo "$st";
+    else
+        echo "   $line";
+    fi;
+done
