@@ -83,11 +83,20 @@ def execute(command,
 
     return data
 
+
 # Sort out command line arguments
 #
 parser = argparse.ArgumentParser()
-parser.add_argument('--hash', nargs='?', const='', default='', help="hash of commit that you wish to submit for review")
-parser.add_argument('--all', help="submit reviews for all commits since merge-base of current branch", action="store_true")
+parser.add_argument(
+    '--hash',
+    nargs='?',
+    const='',
+    default='',
+    help="hash of commit that you wish to submit for review")
+parser.add_argument(
+    '--all',
+    help="submit reviews for all commits since merge-base of current branch",
+    action="store_true")
 args = parser.parse_known_args()
 
 if not args[0].all and len(args[0].hash) == 0:
@@ -97,44 +106,51 @@ if not args[0].all and len(args[0].hash) == 0:
 if args[0].all:
     # Get the various bits of GIT information we need
     #
-    upstream_branch = 'remotes/git-svn' #execute(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip()
+    # execute(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip()
+    upstream_branch = 'remotes/git-svn'
     #print upstream_branch
     head_ref = execute(['git', 'symbolic-ref', '-q', 'HEAD']).strip()
     #print head_ref
-    merge_base = execute(['git', 'merge-base', upstream_branch, head_ref]).strip()
+    merge_base = execute(
+        ['git', 'merge-base', upstream_branch, head_ref]).strip()
     #print merge_base
-    commit_hashes = execute(['git', 'log', '--pretty=format:%H', '--reverse', merge_base + '..']).strip()
+    commit_hashes = execute(
+        ['git', 'log', '--pretty=format:%H', '--reverse', merge_base + '..']).strip()
     #print commit_hashes
     hashes_to_diff = []
     hashes_to_diff.append(merge_base)
     hashes_to_diff = hashes_to_diff + commit_hashes.split()
     #print hashes_to_diff
 
-    print 'Submitting reviews for all commits since merge-base with ' + upstream_branch + '(' + merge_base + ')'
+    print 'Submitting reviews for all commits since merge-base with ' + \
+        upstream_branch + '(' + merge_base + ')'
     if len(args[0].hash) != 0:
         print 'Ignoring hash ' + args[0].hash + ' specified on command line'
 
     # loop over pairs of hashes and submit the diffs from them
-    for i in range( len(hashes_to_diff) - 1):
-        print 'Review of', hashes_to_diff[i], 'to', hashes_to_diff[(i+1)]
-        cmd = ['rbt', 'post', '-g', '--branch', upstream_branch, # + ' (' + hashes_to_diff[(i+1)] + ')',
-                          '--revision-range', hashes_to_diff[i] + ':' + hashes_to_diff[(i+1)] ] + args[1]
+    for i in range(len(hashes_to_diff) - 1):
+        print 'Review of', hashes_to_diff[i], 'to', hashes_to_diff[(i + 1)]
+        cmd = ['rbt', 'post', '-g', '--branch', upstream_branch,  # + ' (' + hashes_to_diff[(i+1)] + ')',
+               '--revision-range', hashes_to_diff[i] + ':' + hashes_to_diff[(i + 1)]] + args[1]
         print " ".join(cmd)
-        review = execute( cmd )
+        review = execute(cmd)
         print review
 else:
-    # This may not be a full hash. Could be HEAD~2, a shortened hash or something else
+    # This may not be a full hash. Could be HEAD~2, a shortened hash or
+    # something else
     hash = args[0].hash
 
     # Get the various bits of GIT information we need
     #
     # get the commit hashes for the two previous commits
-    commit_hashes = execute(['git', 'log', '--pretty=format:%H', '--reverse', '-2', hash]).strip()
+    commit_hashes = execute(
+        ['git', 'log', '--pretty=format:%H', '--reverse', '-2', hash]).strip()
     #print commit_hashes
     hashes_to_diff = commit_hashes.split()
     #print hashes_to_diff
 
-    branches = execute(['git', 'branch', '-a', '--no-color', '--contains', hash]).strip()
+    branches = execute(
+        ['git', 'branch', '-a', '--no-color', '--contains', hash]).strip()
     branches_list = branches.split('\n')
 
     #print branches_list
@@ -147,8 +163,9 @@ else:
     #print branch
 
     print 'Review of', hashes_to_diff[0], 'to', hashes_to_diff[1]
-    cmd = ['rbt', 'post', '-I', hashes_to_diff[1], '--parent=%s'%hashes_to_diff[0] ] + args[1]
-    print " ".join( cmd )
-    review = execute( cmd )
+    cmd = [
+        'rbt', 'post', '-I', hashes_to_diff[1], '--parent=%s' %
+        hashes_to_diff[0]] + args[1]
+    print " ".join(cmd)
+    review = execute(cmd)
     print review
-
