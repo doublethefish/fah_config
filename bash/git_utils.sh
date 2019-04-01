@@ -12,20 +12,9 @@ alias dg="gd"
 GIT_SEARCH_DIRS="/usr/local/git/contrib/completion"
 
 if [[ "${FAH_PLATFORM}" == "mac" ]]; then
-	for pkg in bash-completion bash-git-prompt; do
-		if ! brew list -1 | grep -q "^${pkg}\$"; then
-			echo "The package ${pkg} is not installed, installing"
-			brew install bash-completion
-		fi
-	done
-
-	BREW_GIT_DIR=$(brew --prefix bash-git-prompt)/share
-
-	__GIT_PROMPT_DIR=${BREW_GIT_DIR}
-	export __GIT_PROMPT_DIR
 
 	# disable on mac until I can work out why my custom PS1 is being overwritten
-	GIT_SEARCH_DIRS="" #$GIT_SEARCH_DIRS ${BREW_GIT_DIR}"
+	GIT_SEARCH_DIRS=""
 
 	# Hardcode the search for the bash-completion. There might be a better way to
 	# do this
