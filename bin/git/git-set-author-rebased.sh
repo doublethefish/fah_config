@@ -3,6 +3,7 @@
 if [ "$#" != "3" ]
 then
 	echo "${0} <OLD_EMAIL> <NEW_EMAIL> <NAME>"
+	git shortlog --summary --numbered --email
 	exit 1
 fi
 
