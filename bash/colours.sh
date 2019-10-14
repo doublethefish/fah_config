@@ -95,13 +95,13 @@ fi
 SHORT_HOST_NAME=$(hostname | sed 's/\..*//')                     # strip off everything after the first dot
 SHORT_HOST_NAME=$(echo ${SHORT_HOST_NAME} | sed 's/\(.\).*\(.\)$/\1\2/') # strip off everything after the first dot
 SHORT_HOST_NAME=$(echo ${SHORT_HOST_NAME} | tr '[:upper:]' '[:lower:]')  # make lower case
-parse_git_branch() {
+function parse_git_branch() {
 	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-parse_path() {
+function parse_path() {
 	pwd | sed -e 's#\$NC_LIBRARIES_META_PATH#nclibs#' | sed -e 's#/mnt/d/NCam/#NC|#' | sed -e 's#/mnt/d/NCam/#NC|#'
 }
-fah_prompt_cmd() {
+function fah_prompt_cmd() {
 	NCAM_PATH=$(pwd | sed -e 's#.*NCam.*/\(\(RTC\|Nc\)[^/]*\).*#\1#' | sed -e 's#.*NCam#NCam#' | sed -e 's#.*Development/*#dev:#g')
 	echo -en "\033]0;${NCAM_PATH}\a"
 }
