@@ -1,0 +1,53 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list ''
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %1:%p%s
+zstyle :compinstall filename '/Users/frank/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=5000
+SAVEHIST=1000
+setopt appendhistory nomatch notify
+unsetopt autocd beep extendedglob
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+setopt PROMPT_SUBST
+
+source ${FAH_HOME}/.fah/bash/os.sh            # setup Platform detection
+source ${FAH_HOME}/.fah/bash/fah_bin_setup.sh # setup bin-path
+source ${FAH_HOME}/.fah/bash/aliases.sh
+source ${FAH_HOME}/.fah/bash/compiler.sh
+source ${FAH_HOME}/.fah/bash/git_utils.sh
+source ${FAH_HOME}/.fah/bash/svn_utils.sh
+#source ${FAH_HOME}/.fah/bash/django.sh
+#source ${FAH_HOME}/.fah/bash/android.sh
+#source ${FAH_HOME}/.fah/bash/python3.1.sh
+#source ${FAH_HOME}/.fah/bash/ssh.sh
+#source ${FAH_HOME}/.fah/bash/autocomplete.sh
+source ${FAH_HOME}/.fah/bash/colours.sh # last to override git stuff etc.
+
+####################################
+###    Environment Settings     ####
+####################################
+if [ -z ${FAH_BIN} ]; then
+	echo "FAH_BIN not set!!"
+else
+	PATH=${PATH}:${FAH_BIN}                      # my stuff
+	PATH=${PATH}:${FAH_BIN}/git                  # my git tools
+	PATH=${PATH}:${FAH_BIN}/git/git-code-quality # my git specific code quality tools
+	PATH=${PATH}:${FAH_BIN}/git/git-code-review  # tools for uploading to code-review systems
+	PATH=${PATH}:${FAH_BIN}/git/git-difftools    # git diff utils
+	PATH=${PATH}:${FAH_BIN}/svn                  # my svn tools
+	echo "Using .fah bash ${FAH_BIN}"
+fi
