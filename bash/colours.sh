@@ -92,7 +92,7 @@ fi
 #PS1="${TXTCyan}\w ${TXTYellow}$ ${TXTGreen}${Reset}"
 #PS1="${TXTCyan}$PROMPT_COMMAND${TXTYellow}\$ ${TXTGreen}${TXTGrey}" # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
 #echo "Setting PS1"
-SHORT_HOST_NAME=$(echo ${HOSTNAME} | sed 's/\..*//')                     # strip off everything after the first dot
+SHORT_HOST_NAME=$(hostname | sed 's/\..*//')                     # strip off everything after the first dot
 SHORT_HOST_NAME=$(echo ${SHORT_HOST_NAME} | sed 's/\(.\).*\(.\)$/\1\2/') # strip off everything after the first dot
 SHORT_HOST_NAME=$(echo ${SHORT_HOST_NAME} | tr '[:upper:]' '[:lower:]')  # make lower case
 parse_git_branch() {
