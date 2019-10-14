@@ -40,6 +40,7 @@ if [ "$color_prompt" != yes ]; then
 	echo "\t: This is possibly a lie; is tput missing?"
 else
 	export TXTNoColour="\033[0m"
+	export TXTNoBold=""
 	export TXTBlack="\033[0;30m"
 	export TXTRed="\033[0;31m"
 	export TXTGreen="\033[0;32m"
@@ -61,6 +62,7 @@ else
 
 	# PS1 colours require \[ and \] to denote non-printable characters
 	export PS1_TXTNoColour="\[${TXTNoColour}\]"
+	export PS1_TXTNoBold=""
 	export PS1_TXTBlack="\[${TXTBlack}\]"
 	export PS1_TXTRed="\[${TXTRed}\]"
 	export PS1_TXTGreen="\[${TXTGreen}\]"
@@ -107,7 +109,7 @@ export fah_prompt_cmd
 PROMPT_COMMAND=fah_prompt_cmd
 export PROMPT_COMMAND
 #export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTBrown}\$(parse_git_branch)\\\$ ${PS1_TXTGreen}${PS1_TXTGrey}" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
+PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTBrown}\$(parse_git_branch)\\\$${PS1_TXTGreen}${PS1_TXTGrey}${PS1_TXTNoBold} " # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
 #PS1="\[${TXTBoldWhite}]]${SHORT_HOST_NAME}\{${TXTCyan}]]\w\[${TXTBrown}]]\$ \[${TXTGrey}]]" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
 export PS1
 
