@@ -44,7 +44,7 @@ else
 	export TXTBlack="\033[0;30m"
 	export TXTRed="\033[0;31m"
 	export TXTGreen="\033[0;32m"
-	export TXTBrown="\033[0;33m"
+	export TXTYellow="\033[0;33m"
 	export TXTBlue="\033[0;34m"
 	export TXTPurple="\033[0;35m"
 	export TXTCyan="\033[0;36m"
@@ -66,7 +66,7 @@ else
 	export PS1_TXTBlack="\[${TXTBlack}\]"
 	export PS1_TXTRed="\[${TXTRed}\]"
 	export PS1_TXTGreen="\[${TXTGreen}\]"
-	export PS1_TXTBrown="\[${TXTBrown}\]"
+	export PS1_TXTYellow="\[${TXTYellow}\]"
 	export PS1_TXTBlue="\[${TXTBlue}\]"
 	export PS1_TXTPurple="\[${TXTPurple}\]"
 	export PS1_TXTCyan="\[${TXTCyan}\]"
@@ -84,13 +84,13 @@ else
 fi
 
 ##Reset="\[$(tput sgr0)\]"
-# DEBUG COLOURS: echo -e "${TXTUnknown1}TXTUnknown1, \n${TXTUnknown2}TXTUnknown2, \n${TXTBlack}TXTBlack, \n${TXTRed}TXTRed, \n${TXTGreen}TXTGreen, \n${TXTBrown}TXTBrown, \n${TXTBlue}TXTBlue, \n${TXTPurple}TXTPurple, \n${TXTCyan}TXTCyan, \n${TXTDarkGray}TXTDarkGray, \n${TXTBoldRed}TXTBoldRed, \n${TXTBoldGreen}TXTBoldGreen, \n${TXTBold}TXTBold, \n${TXTBoldBlue}TXTBoldBlue, \n${TXTBoldPurple}TXTBoldPurple, \n${TXTBoldCyan}TXTBoldCyan, \n${TXTBoldWhite}TXTBoldWhite, \n${TXTGrey}TXTGrey"
+# DEBUG COLOURS: echo -e "${TXTUnknown1}TXTUnknown1, \n${TXTUnknown2}TXTUnknown2, \n${TXTBlack}TXTBlack, \n${TXTRed}TXTRed, \n${TXTGreen}TXTGreen, \n${TXTYellow}TXTYellow, \n${TXTBlue}TXTBlue, \n${TXTPurple}TXTPurple, \n${TXTCyan}TXTCyan, \n${TXTDarkGray}TXTDarkGray, \n${TXTBoldRed}TXTBoldRed, \n${TXTBoldGreen}TXTBoldGreen, \n${TXTBold}TXTBold, \n${TXTBoldBlue}TXTBoldBlue, \n${TXTBoldPurple}TXTBoldPurple, \n${TXTBoldCyan}TXTBoldCyan, \n${TXTBoldWhite}TXTBoldWhite, \n${TXTGrey}TXTGrey"
 ## Set prompt
-##PS1="${TXTCyan}\w ${TXTBrown}$ ${TXTGreen}${Reset}"
-#export PS1="${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTNoColour}"
+##PS1="${TXTCyan}\w ${TXTYellow}$ ${TXTGreen}${Reset}"
+#export PS1="${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTNoColour}"
 # Set prompt
-#PS1="${TXTCyan}\w ${TXTBrown}$ ${TXTGreen}${Reset}"
-#PS1="${TXTCyan}$PROMPT_COMMAND${TXTBrown}\$ ${TXTGreen}${TXTGrey}" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
+#PS1="${TXTCyan}\w ${TXTYellow}$ ${TXTGreen}${Reset}"
+#PS1="${TXTCyan}$PROMPT_COMMAND${TXTYellow}\$ ${TXTGreen}${TXTGrey}" # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
 #echo "Setting PS1"
 SHORT_HOST_NAME=$(echo ${HOSTNAME} | sed 's/\..*//')                     # strip off everything after the first dot
 SHORT_HOST_NAME=$(echo ${SHORT_HOST_NAME} | sed 's/\(.\).*\(.\)$/\1\2/') # strip off everything after the first dot
@@ -109,8 +109,8 @@ export fah_prompt_cmd
 PROMPT_COMMAND=fah_prompt_cmd
 export PROMPT_COMMAND
 #export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTBrown}\$(parse_git_branch)\\\$${PS1_TXTGreen}${PS1_TXTGrey}${PS1_TXTNoBold} " # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
-#PS1="\[${TXTBoldWhite}]]${SHORT_HOST_NAME}\{${TXTCyan}]]\w\[${TXTBrown}]]\$ \[${TXTGrey}]]" # "${TXTCyan}\w ${TXTBrown}\$ ${TXTGreen}${TXTGrey}"
+PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTYellow}\$(parse_git_branch)\\\$${PS1_TXTGreen}${PS1_TXTGrey}${PS1_TXTNoBold} " # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
+#PS1="\[${TXTBoldWhite}]]${SHORT_HOST_NAME}\{${TXTCyan}]]\w\[${TXTYellow}]]\$ \[${TXTGrey}]]" # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
 export PS1
 
 # LSCOLORS     "abcdabcdabcdabcdabcdab"
