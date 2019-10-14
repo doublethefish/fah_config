@@ -109,7 +109,7 @@ export fah_prompt_cmd
 PROMPT_COMMAND=fah_prompt_cmd
 export PROMPT_COMMAND
 #export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTYellow}\$(parse_git_branch)\\\$${PS1_TXTGreen}${PS1_TXTGrey}${PS1_TXTNoBold} " # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
+PS1="${PS1_TXTBoldWhite}${SHORT_HOST_NAME} ${PS1_TXTCyan}\$(parse_path)${PS1_TXTYellow}\$(parse_git_branch)\\\$${PS1_TXTGreen}${PS1_TXTGrey}${PS1_TXTNoColour}${PS1_TXTNoBold} " # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
 #PS1="\[${TXTBoldWhite}]]${SHORT_HOST_NAME}\{${TXTCyan}]]\w\[${TXTYellow}]]\$ \[${TXTGrey}]]" # "${TXTCyan}\w ${TXTYellow}\$ ${TXTGreen}${TXTGrey}"
 
 # LSCOLORS     "abcdabcdabcdabcdabcdab"
