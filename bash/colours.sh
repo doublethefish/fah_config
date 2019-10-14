@@ -99,7 +99,14 @@ function parse_git_branch() {
 	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 function parse_path() {
-	pwd | sed -e 's#\$NC_LIBRARIES_META_PATH#nclibs#' | sed -e 's#/mnt/d/NCam/#NC|#' | sed -e 's#/mnt/d/NCam/#NC|#'
+	CMD="pwd | sed -e 's#\$NC_LIBRARIES_META_PATH#nclibs#' | sed -e 's#/mnt/d/NCam/#NC|#' | sed -e 's#/mnt/d/NCam/#NC|#' \
+	         | sed -e \"s#"$FAH_DEV_DIR"/fah_products/loveclimbing.rocks/#lcr:#\" \
+	         | sed -e \"s#"$FAH_DEV_DIR"/fah_products/learn_spanish#ls:#\" \
+	         | sed -e \"s#"$FAH_DEV_DIR"/fah_products/doublethefish#dtf:#\" \
+	         | sed -e \"s#"$FAH_DEV_DIR"/fah_products/#fah:#\" \
+	         | sed -e \"s#"$FAH_DEV_DIR"/##\""
+	#echo "$CMD"
+	eval "$CMD"
 }
 function fah_prompt_cmd() {
 	NCAM_PATH=$(pwd | sed -e 's#.*NCam.*/\(\(RTC\|Nc\)[^/]*\).*#\1#' | sed -e 's#.*NCam#NCam#' | sed -e 's#.*Development/*#dev:#g')
