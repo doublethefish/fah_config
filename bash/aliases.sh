@@ -14,6 +14,7 @@ alias hgrep="ffind \"*.h\" | xargs grep -n"
 alias dev="cd ${FAH_DEV_DIR}"
 alias fah="dev && cd fah_products"
 alias dtf="dev && cd doublethefish"
+alias lcr="dev && cd lovec"
 alias double="dtf"
 alias doublethefish="dtf"
 export dev
