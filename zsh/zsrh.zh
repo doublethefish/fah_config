@@ -56,3 +56,6 @@ else
 	PATH=${PATH}:${FAH_BIN}/svn                  # my svn tools
 	echo "Using .fah bash ${FAH_BIN}"
 fi
+
+
+bindkey '^R' history-incremental-search-backward
